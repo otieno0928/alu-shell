@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "Best School" > "$(echo "XCpcXCdcdidCZXN0IFNjaG9vbCInXFxcKlskXT9cIlwqXCJcKlwiXCpcIlwqXCIqOik=" | base64 -d)"
