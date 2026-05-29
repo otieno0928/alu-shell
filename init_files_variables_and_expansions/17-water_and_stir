@@ -13,7 +13,7 @@ decode() {
         result=$(( result * base_len + digit ))
     done
 
-    echo $result
+    printf '%d' $result
 }
 
 encode() {
@@ -23,7 +23,7 @@ encode() {
     local result=""
 
     if (( num == 0 )); then
-        echo "${base:0:1}"
+        printf '%s' "${base:0:1}"
         return
     fi
 
@@ -33,7 +33,7 @@ encode() {
         num=$(( num / base_len ))
     done
 
-    echo "$result"
+    printf '%s\n' "$result"
 }
 
 num1=$(decode "$WATER" "water")
