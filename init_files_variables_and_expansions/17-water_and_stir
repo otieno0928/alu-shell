@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -c "w=int('$WATER'.translate(str.maketrans('water','01234')),5);s=int('$STIR'.translate(str.maketrans('stir','0123')),4);print(('{:o}'.format(w+s)).translate(str.maketrans('01234567','bestchol')))"
+printf "%o\n" $(( 5#$(echo "$WATER" | tr -c 'water\n' '0') + 4#$(echo "$STIR" | tr -c 'stir\n' '0') )) | tr 'water' '01234' | tr 'stir' '0123' | tr '01234567' 'bestchol'
