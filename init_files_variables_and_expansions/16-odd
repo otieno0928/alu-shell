@@ -1,2 +1,2 @@
 #!/bin/bash
-tr ':' '\n' < /dev/stdin | sort
+awk 'NR % 2 == 1'
