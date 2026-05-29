@@ -1,4 +1,2 @@
 #!/bin/bash
-val_water=$(echo "$WATER" | tr 'water' '0-4')
-val_stir=$(echo "$STIR" | tr 'stir.' '0-4')
-echo "ibase=5; obase=8; $val_water + $val_stir" | bc | tr '0-7' 'bestchol'
+echo "ibase=5; obase=8; $(echo $WATER | tr 'water' '0-4') + $(echo $STIR | tr 'stir.' '0-4')" | bc | tr '0-7' 'bestchol'
