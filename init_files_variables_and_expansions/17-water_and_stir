@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%o\n" $(( 5#$(echo "$WATER" | tr -c 'water\n' '0') + 4#$(echo "$STIR" | tr -c 'stir\n' '0') )) | tr 'water' '01234' | tr 'stir' '0123' | tr '01234567' 'bestchol'
+echo "ibase=5;obase=8;$(echo $WATER | tr 'water' '01234') + $(echo $STIR | tr 'stir' '01234')" | bc | tr '01234567' 'bestchol'
