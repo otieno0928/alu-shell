@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script lists files in the directory showing only names after the first dash
+
+for file in *
+do
+    if [ -e "$file" ]
+    then
+        echo "${file#*-}"
+    fi
+done
