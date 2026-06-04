@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script manages its own PID file and handles specific signal trap messages
+
+PID_FILE="/var/run/myscript.pid"
+
+# Write current PID to file
+echo "$$" > "$PID_FILE"
+
+# Define trap behaviors
+trap 'echo "I hate the kill command"; rm -f "$PID_FILE"; exit' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'rm -f "$PID_FILE"; exit' SIGQUIT
+
+# Infinite loop
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
